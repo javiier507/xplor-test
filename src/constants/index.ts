@@ -22,3 +22,14 @@ export const MONITORS_COLUMNS = [
     'Coordinates',
     'Status',
 ];
+
+export const TRANSACTIONS_COLUMNS = [
+    'Id',
+    'Identification',
+    'idCYOE',
+    'Transaction',
+    'Procedure',
+    'Receipt',
+    'Device Date',
+    'State',
+];

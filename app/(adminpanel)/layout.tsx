@@ -28,6 +28,7 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
     { name: 'Dashboard', href: '/dashboard', icon: FiHome },
+    { name: 'Transactions', href: '/transactions', icon: FiHome },
     { name: 'Kiosks', href: '/kiosks', icon: FiSmartphone },
 ];
 
