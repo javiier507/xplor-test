@@ -1,38 +1,18 @@
-'use client';
+import { executeRequest } from '../../../src/utils/request';
+import { MontitorsResponse } from '../../../src/dtos/Monitor';
 
-import { Box, Stack } from '@chakra-ui/react';
-
-import { makeRequest } from '../../../src/utils/request';
-
-type Post = {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-};
+import { MonitorsContainer } from '../../../src/container/MonitorsContainer';
 
 async function getData() {
-    return makeRequest<Post[]>(
-        fetch('https://jsonplaceholder.typicode.com/posts', {
+    return executeRequest<MontitorsResponse>(
+        fetch('http://127.0.0.1:8080/device/monitor', {
             cache: 'no-store',
         }),
     );
 }
 
 export default async function KiosksPage() {
-    const { data, error } = await getData();
-    return (
-        <Stack px={8}>
-            <h1>Kiosks Page!</h1>
-            {error ? (
-                <strong>Lo sentimos ha ocurrido un error</strong>
-            ) : (
-                <ol>
-                    {data?.map((item) => (
-                        <li key={item.id}>{item.title}</li>
-                    ))}
-                </ol>
-            )}
-        </Stack>
-    );
+    const data = await getData();
+
+    return <MonitorsContainer monitors={data.data} />;
 }

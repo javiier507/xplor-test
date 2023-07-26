@@ -31,6 +31,31 @@
             "enabled": true,
             "randomResponse": false,
             "sequentialResponse": false
+        },
+        {
+            "uuid": "768706a7-fd1a-4d62-b2ed-ba2828eb7eaf",
+            "documentation": "Monitors",
+            "method": "get",
+            "endpoint": "device/monitor",
+            "responses": [
+                {
+                    "uuid": "aa7c2e1a-be42-42d5-a309-7871c1f55b82",
+                    "body": "{\n    \"code\": 200,\n    \"message\": \"The devices registered success.\",\n    \"data\": [\n        {\n            \"_id\": 13,\n            \"name\": \"KIOSKO PR\",\n            \"ip\": \"0.0.0.0\",\n            \"platform\": \"WINDOWS\",\n            \"orientation\": \"HORIZONTAL\",\n            \"latitud\": 9.03118055,\n            \"longitud\": -79.75761585,\n            \"status\": \"offline\",\n            \"createdAt\": \"2023-04-25T19:27:25.000Z\",\n            \"lastSincronization\": \"Desconect from 2 months\"\n        },\n        {\n            \"_id\": 19,\n            \"name\": \"KIOSKO MAYAGÜEZ\",\n            \"ip\": \"0.0.0.0\",\n            \"platform\": \"WINDOWS\",\n            \"orientation\": \"HORIZONTAL\",\n            \"latitud\": 9.03118055,\n            \"longitud\": -79.75761585,\n            \"status\": \"offline\",\n            \"createdAt\": \"2023-05-02T20:43:30.000Z\",\n            \"lastSincronization\": \"Desconect from 2 months\"\n        },\n        {\n            \"_id\": 17,\n            \"name\": \"KIOSKO AGUADILLA\",\n            \"ip\": \"0.0.0.0\",\n            \"platform\": \"WINDOWS\",\n            \"orientation\": \"VERTICAL\",\n            \"latitud\": 9.03118055,\n            \"longitud\": -79.75761585,\n            \"status\": \"offline\",\n            \"createdAt\": \"2023-05-02T20:42:56.000Z\",\n            \"lastSincronization\": \"Desconect from 2 months\"\n        },\n        {\n            \"_id\": 16,\n            \"name\": \"KIOSKO ARECIBO\",\n            \"ip\": \"0.0.0.0\",\n            \"platform\": \"WINDOWS\",\n            \"orientation\": \"VERTICAL\",\n            \"latitud\": 9.03118055,\n            \"longitud\": -79.75761585,\n            \"status\": \"offline\",\n            \"createdAt\": \"2023-05-02T20:42:44.000Z\",\n            \"lastSincronization\": \"Desconect from 2 months\"\n        },\n        {\n            \"_id\": 14,\n            \"name\": \"AIBONITO\",\n            \"ip\": \"0.0.0.0\",\n            \"platform\": \"WINDOWS\",\n            \"orientation\": \"VERTICAL\",\n            \"latitud\": 9.03118055,\n            \"longitud\": -79.75761585,\n            \"status\": \"offline\",\n            \"createdAt\": \"2023-05-02T20:41:19.000Z\",\n            \"lastSincronization\": \"Desconect from 2 months\"\n        },\n        {\n            \"_id\": 15,\n            \"name\": \"KIOSKO SAN JUAN\",\n            \"ip\": \"0.0.0.0\",\n            \"platform\": \"WINDOWS\",\n            \"orientation\": \"VERTICAL\",\n            \"latitud\": 9.03118055,\n            \"longitud\": -79.75761585,\n            \"status\": \"offline\",\n            \"createdAt\": \"2023-05-02T20:42:19.000Z\",\n            \"lastSincronization\": \"Desconect from 2 months\"\n        }\n    ]\n}",
+                    "latency": 0,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "filePath": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false
+                }
+            ],
+            "enabled": true,
+            "randomResponse": false,
+            "sequentialResponse": false
         }
     ],
     "proxyMode": false,

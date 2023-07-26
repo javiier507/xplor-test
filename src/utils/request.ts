@@ -26,3 +26,17 @@ export async function makeRequest<T>(promiseRequest: Promise<Response>): Promise
             );
     });
 }
+
+export async function executeRequest<T>(promiseRequest: Promise<Response>): Promise<T> {
+    return new Promise((resolve, reject) => {
+        promiseRequest
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Server Error: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => resolve(data as T))
+            .catch((error) => reject(error));
+    });
+}

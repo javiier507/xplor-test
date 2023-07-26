@@ -1,3 +1,4 @@
+import { GenericResponse } from './Generics';
 import { User } from './User';
 
 export type LoginRequest = {
@@ -10,8 +11,6 @@ type LoginDataResponse = {
     token: string;
 };
 
-export type LoginResponse = {
-    code: number;
-    message: string;
+export interface LoginResponse extends GenericResponse {
     data: LoginDataResponse;
-};
+}
