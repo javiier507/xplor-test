@@ -1,0 +1,71 @@
+{
+    "uuid": "cbfab5b9-3755-42e9-9072-3463a41813df",
+    "lastMigration": 18,
+    "name": "Xplor Mock API",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 8080,
+    "hostname": "0.0.0.0",
+    "routes": [
+        {
+            "uuid": "892a1b27-49c9-4721-9bbb-8a0279b0a65c",
+            "documentation": "Login",
+            "method": "post",
+            "endpoint": "auth/login",
+            "responses": [
+                {
+                    "uuid": "cef55963-690b-4448-8a24-36b7a60e2105",
+                    "body": "{\n    \"code\": 200,\n    \"message\": \"Login Success\",\n    \"data\": {\n        \"user\": {\n            \"_id\": 16,\n            \"name\": \"SELECTION\",\n            \"lastName\": \"ONE\",\n            \"email\": \"selection@getxplor.com\",\n            \"typeUser\": \"REGULAR\",\n            \"profile\": {\n                \"_id\": 4,\n                \"name\": \"DEMO SELECTION\",\n                \"roles\": [\n                    {\n                        \"name\": \"View Log\",\n                        \"code\": \"view-log\"\n                    },\n                    {\n                        \"name\": \"View Dashboard\",\n                        \"code\": \"view-dashboard\"\n                    },\n                    {\n                        \"name\": \"View Dashboard General\",\n                        \"code\": \"view-dashboard-general\"\n                    },\n                    {\n                        \"name\": \"Create Device\",\n                        \"code\": \"create-device\"\n                    },\n                    {\n                        \"name\": \"Update Device\",\n                        \"code\": \"update-device\"\n                    },\n                    {\n                        \"name\": \"View Device\",\n                        \"code\": \"view-device\"\n                    },\n                    {\n                        \"name\": \"List Device\",\n                        \"code\": \"list-device\"\n                    },\n                    {\n                        \"name\": \"Delete Device\",\n                        \"code\": \"delete-device\"\n                    },\n                    {\n                        \"name\": \"List Transaction\",\n                        \"code\": \"list-transaction\"\n                    },\n                    {\n                        \"name\": \"List Tracking\",\n                        \"code\": \"list-tracking\"\n                    }\n                ]\n            },\n            \"companyRaw\": {\n                \"_id\": 7,\n                \"name\": \"DEMO TRIBUNALES\",\n                \"ruc\": \"kaas-demo tribunales\",\n                \"token\": \"2d5a46d7-8e3f-4dd1-a64a-e6c1ab093c88\",\n                \"logo\": \"https://cdn.getxplor.com/KAAS/company/MASTER/logo/logo-MASTER.png\",\n                \"color\": \"#ffffff\",\n                \"products\": [\n                    \"--\",\n                    \"***\"\n                ],\n                \"typeCustomer\": \"FACTURATION\",\n                \"startDate\": \"2023-04-25\",\n                \"endDate\": \"2024-04-25\",\n                \"quantityDevice\": 10,\n                \"status\": \"ACTIVE\",\n                \"createdBy\": 2,\n                \"updatedBy\": 1,\n                \"createdAt\": \"2023-04-25T15:26:28.000Z\",\n                \"updatedAt\": \"2023-04-28T00:22:25.508Z\"\n            }\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjE2LCJpYXQiOjE2OTAzODkxMzUsImV4cCI6MTY5MDQxMDczNX0.ED4t6Lrp4oicn3us0eBRB16WPbpvI5wZddWR-RKpje4\"\n    }\n}",
+                    "latency": 0,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "filePath": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false
+                }
+            ],
+            "enabled": true,
+            "randomResponse": false,
+            "sequentialResponse": false
+        }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "https": false,
+    "cors": true,
+    "headers": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+        },
+        {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+        },
+        {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+        }
+    ],
+    "proxyReqHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "proxyResHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ]
+}
