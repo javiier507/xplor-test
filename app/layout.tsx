@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { NextCacheProvider } from '../providers/chakra';
+import { NextCacheProvider } from '../src/providers/chakra';
 
 export const metadata: Metadata = {
     title: 'Create Next App',
