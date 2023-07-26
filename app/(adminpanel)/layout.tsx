@@ -18,7 +18,7 @@ import {
     FlexProps,
     Link,
 } from '@chakra-ui/react';
-import { FiHome, FiSmartphone, FiMenu } from 'react-icons/fi';
+import { FiHome, FiMenu, FiList } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 
 interface LinkItemProps {
@@ -28,8 +28,8 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
     { name: 'Dashboard', href: '/dashboard', icon: FiHome },
-    { name: 'Transactions', href: '/transactions', icon: FiHome },
-    { name: 'Kiosks', href: '/kiosks', icon: FiSmartphone },
+    { name: 'Transactions', href: '/transactions', icon: FiList },
+    { name: 'Kiosks', href: '/kiosks', icon: FiList },
 ];
 
 export default function AdminPanelLayout({

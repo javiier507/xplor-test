@@ -6,6 +6,7 @@ import { TransactionsContainer } from '../../../src/container/TransactionsContai
 async function getData() {
     return executeRequest<TransactionsReponse>(
         fetch('http://127.0.0.1:8080/transaction-device/moving', {
+            method: 'POST',
             cache: 'no-store',
         }),
     );
