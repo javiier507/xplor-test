@@ -18,9 +18,8 @@ import {
     FlexProps,
     Link,
 } from '@chakra-ui/react';
-import { FiHome, FiTrendingUp, FiCompass, FiStar, FiSettings, FiMenu } from 'react-icons/fi';
+import { FiHome, FiSmartphone, FiMenu } from 'react-icons/fi';
 import { IconType } from 'react-icons';
-import { ReactText } from 'react';
 
 interface LinkItemProps {
     name: string;
@@ -29,7 +28,7 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
     { name: 'Dashboard', href: '/dashboard', icon: FiHome },
-    { name: 'Kioscos', href: '/kiosks', icon: FiTrendingUp },
+    { name: 'Kiosks', href: '/kiosks', icon: FiSmartphone },
 ];
 
 export default function AdminPanelLayout({
@@ -53,7 +52,6 @@ export default function AdminPanelLayout({
                     <SidebarContent onClose={onClose} />
                 </DrawerContent>
             </Drawer>
-            {children}
             <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
             <Box ml={{ base: 0, md: 60 }} p="4">
                 {children}
@@ -69,7 +67,7 @@ interface SidebarProps extends BoxProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     return (
         <Box
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={'blue.700'}
             borderRight="1px"
             borderRightColor={useColorModeValue('gray.200', 'gray.700')}
             w={{ base: 'full', md: 60 }}
@@ -78,29 +76,26 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             {...rest}
         >
             <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-                <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-                    Logo
+                <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" color={'white'}>
+                    Kaas
                 </Text>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
             {LinkItems.map((link) => (
-                <NavItem key={link.name} icon={link.icon}>
-                    <Link as={NextLink} href={link.href}>
-                        {link.name}
-                    </Link>
-                </NavItem>
+                <NavItem key={link.name} name={link.name} href={link.href} icon={link.icon} />
             ))}
         </Box>
     );
 };
 
-interface NavItemProps extends FlexProps {
-    icon: IconType;
-    children: ReactNode;
-}
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ name, href, icon }: LinkItemProps) => {
     return (
-        <Box style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+        <Link
+            as={NextLink}
+            href={href}
+            style={{ textDecoration: 'none' }}
+            _focus={{ boxShadow: 'none' }}
+        >
             <Flex
                 align="center"
                 p="4"
@@ -108,25 +103,15 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
                 borderRadius="lg"
                 role="group"
                 cursor="pointer"
+                color={'white'}
                 _hover={{
-                    bg: 'cyan.400',
-                    color: 'white',
+                    bg: 'blue.600',
                 }}
-                {...rest}
             >
-                {icon && (
-                    <Icon
-                        mr="4"
-                        fontSize="16"
-                        _groupHover={{
-                            color: 'white',
-                        }}
-                        as={icon}
-                    />
-                )}
-                {children}
+                {icon && <Icon mr="4" fontSize="16" as={icon} />}
+                {name}
             </Flex>
-        </Box>
+        </Link>
     );
 };
 
@@ -140,7 +125,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             px={{ base: 4, md: 24 }}
             height="20"
             alignItems="center"
-            bg={useColorModeValue('white', 'gray.900')}
+            bg={'blue.700'}
             borderBottomWidth="1px"
             borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
             justifyContent="flex-start"
@@ -153,8 +138,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                 icon={<FiMenu />}
             />
 
-            <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-                Logo
+            <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold" color={'white'}>
+                Kaas
             </Text>
         </Flex>
     );
