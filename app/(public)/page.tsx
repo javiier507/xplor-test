@@ -11,7 +11,7 @@ import { Message } from '../../src/components/elements/Message';
 
 async function login(values: LoginRequest) {
     return makeRequest<LoginResponse>(
-        fetch('http://localhost:8080/auth/login', {
+        fetch('/api/login', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {
