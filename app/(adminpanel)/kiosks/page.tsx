@@ -20,11 +20,7 @@ export default async function KiosksPage() {
 
     return (
         <GenericContainer>
-            <MonitorsTable
-                columns={MONITORS_COLUMNS}
-                rows={data.data}
-                handleRowOnClick={null as any}
-            />
+            <MonitorsTable columns={MONITORS_COLUMNS} rows={data.data} />
         </GenericContainer>
     );
 }

@@ -20,11 +20,7 @@ export default async function TransactionsPage() {
 
     return (
         <GenericContainer>
-            <TransactionsTable
-                columns={TRANSACTIONS_COLUMNS}
-                rows={data.data.items}
-                handleRowOnClick={null as any}
-            />
+            <TransactionsTable columns={TRANSACTIONS_COLUMNS} rows={data.data.items} />
         </GenericContainer>
     );
 }
