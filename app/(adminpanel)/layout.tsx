@@ -106,6 +106,7 @@ const NavItem = ({ name, href, icon }: LinkItemProps) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+    const { data: session } = useSession();
     return (
         <Flex
             ml={{ base: 0, md: 60 }}
@@ -153,7 +154,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                                     spacing="1px"
                                     ml="2"
                                 >
-                                    <Text fontSize="sm">Justina Clark</Text>
+                                    <Text fontSize="sm">{session?.user?.name || 'User'}</Text>
                                 </VStack>
                                 <Box display={{ base: 'none', md: 'flex' }}>
                                     <FiChevronDown />
@@ -180,8 +181,6 @@ export default function AdminPanelLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const { data: session } = useSession();
-    console.log(session);
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
