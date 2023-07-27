@@ -2,16 +2,16 @@
 
 Requerimientos Funcionales:
 
-* Login
-* Vista de dashboard con gráficas
-* Listado de transacciones
-* Listado de kioskos
+-   Login
+-   Vista de dashboard con gráficas
+-   Listado de transacciones
+-   Listado de kioskos
 
 ## Tecnologías Utilizadas
 
-* [Next.js](https://nextjs.org/): Framework Full Stack de React.js
-* [Chakra UI](https://chakra-ui.com/): Framework UI
-* [React Chart.js 2](https://react-chartjs-2.js.org/): Libreria para gráficas
+-   [Next.js](https://nextjs.org/): Framework Full Stack de React.js
+-   [Chakra UI](https://chakra-ui.com/): Framework UI
+-   [React Chart.js 2](https://react-chartjs-2.js.org/): Libreria para gráficas
 
 ## Como funciona esta aplicación:
 
@@ -30,6 +30,14 @@ Ejecutar como Producción:
 ```bash
 npm run build
 npm run start
+```
+
+Compilar imagenes y ejecutar contenedor:
+
+```bash
+make docker-build
+make docker-run
+make docker-down
 ```
 
 ## Autor
