@@ -1,16 +1,12 @@
 import { executeRequest } from '@/src/utils/request';
+import { FetchChart } from '@/src/api/resources';
 import { ChartResponse, ChartOptions, ChartData } from '@/src/dtos/Chart';
 
 import { GenericContainer } from '@/src/components/elements/Container';
 import { ChartComponent } from '@/src/components/elements/Chart';
 
 async function getData() {
-    return executeRequest<ChartResponse>(
-        fetch('http://127.0.0.1:8080/transaction-device/dashboard-device-chart', {
-            method: 'POST',
-            cache: 'no-store',
-        }),
-    );
+    return executeRequest<ChartResponse>(FetchChart());
 }
 
 export default async function DashboardPage() {

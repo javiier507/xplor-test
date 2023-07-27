@@ -2,6 +2,7 @@ import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 import { executeRequest } from '@/src/utils/request';
+import { FetchLogin } from '@/src/api/resources';
 import { LoginResponse } from '@/src/dtos/Login';
 
 export const authOptions: NextAuthOptions = {
@@ -25,15 +26,9 @@ export const authOptions: NextAuthOptions = {
             async authorize(credentials) {
                 try {
                     const response = await executeRequest<LoginResponse>(
-                        fetch('http://127.0.0.1:8080/auth/login', {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                email: credentials?.email,
-                                password: credentials?.password,
-                            }),
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
+                        FetchLogin({
+                            email: credentials?.email as string,
+                            password: credentials?.password as string,
                         }),
                     );
 
