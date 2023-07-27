@@ -2,7 +2,7 @@
 
 import { Button } from '@chakra-ui/react';
 
-import { Message } from '../../../src/components/elements/Message';
+import { Message } from '@/src/components/elements/Message';
 
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
     return (

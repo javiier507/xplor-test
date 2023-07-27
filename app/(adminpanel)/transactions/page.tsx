@@ -1,7 +1,9 @@
-import { executeRequest } from '../../../src/utils/request';
-import { TransactionsReponse } from '../../../src/dtos/Transaction';
+import { executeRequest } from '@/src/utils/request';
+import { TransactionsReponse } from '@/src/dtos/Transaction';
+import { TRANSACTIONS_COLUMNS } from '@/src/constants/';
 
-import { TransactionsContainer } from '../../../src/container/TransactionsContainer';
+import { GenericContainer } from '@/src/components/elements/Container';
+import { TransactionsTable } from '@/src/components/transaction/TransactionTable';
 
 async function getData() {
     return executeRequest<TransactionsReponse>(
@@ -15,5 +17,13 @@ async function getData() {
 export default async function TransactionsPage() {
     const data = await getData();
 
-    return <TransactionsContainer transactions={data.data.items} />;
+    return (
+        <GenericContainer>
+            <TransactionsTable
+                columns={TRANSACTIONS_COLUMNS}
+                rows={data.data.items}
+                handleRowOnClick={null as any}
+            />
+        </GenericContainer>
+    );
 }

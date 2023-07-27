@@ -1,7 +1,9 @@
-import { executeRequest } from '../../../src/utils/request';
-import { MontitorsResponse } from '../../../src/dtos/Monitor';
+import { executeRequest } from '@/src/utils/request';
+import { MontitorsResponse } from '@/src/dtos/Monitor';
+import { MONITORS_COLUMNS } from '@/src/constants/';
 
-import { MonitorsContainer } from '../../../src/container/MonitorsContainer';
+import { GenericContainer } from '@/src/components/elements/Container';
+import { MonitorsTable } from '@/src/components/monitor/MonitorTable';
 
 async function getData() {
     return executeRequest<MontitorsResponse>(
@@ -15,5 +17,13 @@ async function getData() {
 export default async function KiosksPage() {
     const data = await getData();
 
-    return <MonitorsContainer monitors={data.data} />;
+    return (
+        <GenericContainer>
+            <MonitorsTable
+                columns={MONITORS_COLUMNS}
+                rows={data.data}
+                handleRowOnClick={null as any}
+            />
+        </GenericContainer>
+    );
 }
