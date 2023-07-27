@@ -10,20 +10,29 @@ export const FetchLogin = (body: LoginRequest) =>
         },
     });
 
-export const FetchChart = () =>
+export const FetchChart = (token: string) =>
     fetch(`${API_ENDPOINT}/transaction-device/dashboard-device-chart`, {
         method: 'POST',
         cache: 'no-store',
+        headers: {
+            Authorization: token,
+        },
     });
 
-export const FetchTransactions = () =>
+export const FetchTransactions = (token: string) =>
     fetch(`${API_ENDPOINT}/transaction-device/moving`, {
         method: 'POST',
         cache: 'no-store',
+        headers: {
+            Authorization: token,
+        },
     });
 
-export const FetchKioks = () =>
+export const FetchKioks = (token: string) =>
     fetch(`${API_ENDPOINT}/device/monitor`, {
         method: 'POST',
         cache: 'no-store',
+        headers: {
+            Authorization: token,
+        },
     });

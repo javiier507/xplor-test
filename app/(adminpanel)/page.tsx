@@ -1,3 +1,6 @@
+import { getServerSession } from 'next-auth';
+
+import { authOptions } from '@/app/lib/auth';
 import { executeRequest } from '@/src/utils/request';
 import { FetchChart } from '@/src/api/resources';
 import { ChartResponse, ChartOptions, ChartData } from '@/src/dtos/Chart';
@@ -6,7 +9,9 @@ import { GenericContainer } from '@/src/components/elements/Container';
 import { ChartComponent } from '@/src/components/elements/Chart';
 
 async function getData() {
-    return executeRequest<ChartResponse>(FetchChart());
+    const session = await getServerSession(authOptions);
+    const user = session?.user || ({ apiJWT: null } as any);
+    return executeRequest<ChartResponse>(FetchChart(user.apiJWT));
 }
 
 export default async function DashboardPage() {

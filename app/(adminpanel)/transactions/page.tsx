@@ -1,3 +1,6 @@
+import { getServerSession } from 'next-auth';
+
+import { authOptions } from '@/app/lib/auth';
 import { executeRequest } from '@/src/utils/request';
 import { FetchTransactions } from '@/src/api/resources';
 import { TransactionsReponse } from '@/src/dtos/Transaction';
@@ -7,7 +10,9 @@ import { GenericContainer } from '@/src/components/elements/Container';
 import { TransactionsTable } from '@/src/components/transaction/TransactionTable';
 
 async function getData() {
-    return executeRequest<TransactionsReponse>(FetchTransactions());
+    const session = await getServerSession(authOptions);
+    const user = session?.user || ({ apiJWT: null } as any);
+    return executeRequest<TransactionsReponse>(FetchTransactions(user.apiJWT));
 }
 
 export default async function TransactionsPage() {
