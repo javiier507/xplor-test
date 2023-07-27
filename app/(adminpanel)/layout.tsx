@@ -1,6 +1,7 @@
 'use client';
 
 import NextLink from 'next/link';
+import { useSession } from 'next-auth/react';
 
 import React, { ReactNode } from 'react';
 import {
@@ -37,6 +38,9 @@ export default function AdminPanelLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const { data: session } = useSession();
+    console.log(session);
+
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
