@@ -19,6 +19,22 @@ Requerimientos Funcionales:
 
 ## Instrucciones
 
+Configurar variables de entorno
+
+```bash
+cp .env.example .env.local
+```
+
+```bash
+# .env.local
+
+# Xplor API
+API_ENDPOINT=http://127.0.0.1:8080
+
+# Llave de autenticación
+NEXTAUTH_SECRET=my_ultra_secure_nextauth_secret
+```
+
 Ejecutar como desarrollo:
 
 ```bash
