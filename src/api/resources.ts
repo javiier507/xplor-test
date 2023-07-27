@@ -22,8 +22,13 @@ export const FetchChart = (token: string) =>
 export const FetchTransactions = (token: string) =>
     fetch(`${API_ENDPOINT}/transaction-device/moving`, {
         method: 'POST',
+        body: JSON.stringify({
+            dateStart: '2023-01-11',
+            dateEnd: '2023-01-11',
+        }),
         cache: 'no-store',
         headers: {
+            'Content-Type': 'application/json',
             Authorization: token,
         },
     });
