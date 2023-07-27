@@ -15,7 +15,7 @@ Requerimientos Funcionales:
 
 ## Como funciona esta aplicación:
 
-![image](https://github.com/javiier507/xplor-test/assets/8405694/e455dccd-16ec-4909-8cd6-0e41f559893e)
+![image](https://github.com/javiier507/xplor-test/assets/8405694/12724d6c-f2cc-4c97-8d05-a360040a9768)
 
 ## Instrucciones
 
