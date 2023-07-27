@@ -1,5 +1,6 @@
 'use client';
 
+import { useSession, signOut } from 'next-auth/react';
 import NextLink from 'next/link';
 import {
     IconButton,
@@ -47,7 +48,7 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-    { name: 'Dashboard', href: '/dashboard', icon: FiHome },
+    { name: 'Dashboard', href: '/', icon: FiHome },
     { name: 'Transactions', href: '/transactions', icon: FiList },
     { name: 'Kiosks', href: '/kiosks', icon: FiList },
 ];
@@ -165,7 +166,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                         >
                             <MenuItem>Profile</MenuItem>
                             <MenuDivider />
-                            <MenuItem>Sign out</MenuItem>
+                            <MenuItem onClick={() => signOut()}>Sign out</MenuItem>
                         </MenuList>
                     </Menu>
                 </Flex>
@@ -179,6 +180,8 @@ export default function AdminPanelLayout({
 }: {
     children: React.ReactNode;
 }) {
+    const { data: session } = useSession();
+    console.log(session);
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
